@@ -7,6 +7,6 @@ int main(void)
  * 
  * Return: Always (1)
  */
-write("and that piece pf art is useful\" - Dora Korpar, 2015-10-19\n");
+printf("and that piece pf art is useful\" - Dora Korpar, 2015-10-19\n");
 return (1);
 }
