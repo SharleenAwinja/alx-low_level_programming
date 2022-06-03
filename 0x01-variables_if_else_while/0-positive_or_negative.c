@@ -1,10 +1,11 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
+
 /**
- * main - Used to check the condition
- * Description -Return the result of the function
- * Result: Always (0) Success
+ * main - Entry point
+ *
+ * Result: Always 0 (Success)
  */
 int main(void)
 {
