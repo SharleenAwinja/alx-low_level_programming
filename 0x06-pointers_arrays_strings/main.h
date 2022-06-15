@@ -1,4 +1,5 @@
 void print_number(int n);
+char *rot13(char *);
 int _putchar(char c);
 char *cap_string(char *);
 char *string_toupper(char *);
