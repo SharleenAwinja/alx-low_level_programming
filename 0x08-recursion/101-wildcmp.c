@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 
-**
+/**
  * wildcmp - compares two strings
  * @s1: 1st string to be compared
  * @s2: second string containing '*' or not
