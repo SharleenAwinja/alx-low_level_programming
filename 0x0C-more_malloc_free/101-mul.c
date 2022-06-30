@@ -1,30 +1,52 @@
 #include "main.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
- * main - multiplies two positive numbers
- * @argc: n arguments
- * @argv: args
- * Return: int
+ * get_prod - Multiplies a string of numbers by a single digit.
+ * @prod: The buffer to store the result.
+ * @mult: The string of numbers.
+ * @digit: The single digit.
+ * @zeroes: The necessary number of leading zeroes.
+ *
+ * Description: If mult contains a non-digit, the function
+ *              exits with a status value of 98.
  */
-int main(int argc, char *argv[])
+void get_prod(char *prod, char *mult, int digit, int zeroes)
 {
-unsigned long mul;
-int i, j;
-	if (argc != 3)
-	{ printf("Error\n");
-	exit(98); }
-	for (i = 1; i < argc; i++)
+	int mult_len, num, tens = 0;
+
+	mult_len = find_len(mult) - 1;
+	mult += mult_len;
+
+	while (*prod)
 	{
-		for (j = 0; argv[i][j] != '\0'; j++)
+		*prod = 'x';
+		prod++;
+	}
+
+	prod--;
+
+	while (zeroes--)
+	{
+		*prod = '0';
+		prod--;
+	}
+
+	for (; mult_len >= 0; mult_len--, mult--, prod--)
+	{
+		if (*mult < '0' || *mult > '9')
 		{
-			if (argv[i][j] > 57 || argv[i][j] < 48)
-			{  printf("Error\n");
-			exit(98); }
+			printf("Error\n");
+			exit(98);
 		}
 
+		num = (*mult - '0') * digit;
+		num += tens;
+		*prod = (num % 10) + '0';
+		tens = num / 10;
 	}
-	mul = atol(argv[1]) *  atol(argv[2]);
-	printf("%lu\n", mul);
-return (0);
+
+	if (tens)
+		*prod = (tens % 10) + '0';
 }

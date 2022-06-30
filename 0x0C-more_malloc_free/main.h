@@ -1,3 +1,4 @@
+void get_prod(char *prod, char *mult, int digit, int zeroes);
 int _putchar(char c);
 int main(int argc, char *argv[])
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
